@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, target-densitydpi=medium-dpi, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>3D</title>
+    <style>
+        .item{
+            display: inline-block;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            margin-bottom: 50px;
+
+            font-size: 40px;
+            font-weight: bold;
+
+            transform-origin: center center;
+            transform-style: preserve-3d;
+            perspective: 800px;
+            perspective-origin: center bottom;
+
+        }
+        .rectangleX{
+            border: 1px solid #000000;
+            color: #000000;
+            animation: ggX 2s linear 1s infinite alternate;
+        }
+        .rectangleY{
+            border: 1px solid #3053ff;
+            color: #3053ff;
+            animation: ggY 2s linear 1s infinite alternate;
+        }
+        .rectangleZ{
+            border: 1px solid #fe2ae7;
+            color: #fe2ae7;
+            animation: ggZ 2s linear 1s infinite alternate;
+        }
+        .rectangleXY{
+            border: 1px solid #ff7c29;
+            color: #ff7c29;
+            animation: ggXZ 2s linear 1s infinite alternate;
+        }
+        .rectangleXZ{
+            border: 1px solid red;
+            color: red;
+            animation: ggXZ 2s linear 1s infinite alternate;
+        }
+        .rectangleYZ{
+            border: 1px solid green;
+            color: green;
+            animation: ggYZ 2s linear 1s infinite alternate;
+        }
+        @keyframes ggX{
+            from {
+                transform: rotate3d(1, 0, 1,0deg);
+            }
+            to{
+                transform: rotate3d(1, 0, 1,360deg);
+            }
+        }
+        @keyframes ggY{
+            from {
+                transform: rotate3d(0, 1, 0,0deg);
+            }
+            to{
+                transform: rotate3d(0, 1, 0,360deg);
+            }
+        }
+        @keyframes ggZ{
+            from {
+                transform: rotate3d(0, 0, 1,0deg);
+            }
+            to{
+                transform: rotate3d(0, 0, 1,360deg);
+            }
+        }
+        @keyframes ggXY{
+            from {
+                transform: rotate3d(1, 1, 0,0deg);
+            }
+            to{
+                transform: rotate3d(1, 1, 0,360deg);
+            }
+        }
+        @keyframes ggXZ{
+            from {
+                transform: rotate3d(1, 0, 1,0deg);
+            }
+            to{
+                transform: rotate3d(1, 0, 1,360deg);
+            }
+        }
+        @keyframes ggYZ{
+            from {
+                transform: rotate3d(0, 1, 1,0deg);
+            }
+            to{
+                transform: rotate3d(0, 1, 1,360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="item rectangleX">X</div>
+<div class="item rectangleY">Y</div>
+<div class="item rectangleZ">Z</div>
+<div class="item rectangleXZ">XY</div>
+<div class="item rectangleYZ">YZ</div>
+<div class="item rectangleYZ">YZ</div>
+</body>
+</html>
