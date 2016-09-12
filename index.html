@@ -1,119 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, target-densitydpi=medium-dpi, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title></title>
+    <meta name="format-detection" content="telephone=no">
+    <title>3D</title>
+    <style>
+        .item{
+            display: inline-block;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            margin-bottom: 50px;
+
+            font-size: 40px;
+            font-weight: bold;
+
+            transform-origin: center center;
+            transform-style: preserve-3d;
+            perspective: 800px;
+            perspective-origin: center bottom;
+
+        }
+        .rectangleX{
+            border: 1px solid #000000;
+            color: #000000;
+            animation: ggX 2s linear 1s infinite alternate;
+        }
+        .rectangleY{
+            border: 1px solid #3053ff;
+            color: #3053ff;
+            animation: ggY 2s linear 1s infinite alternate;
+        }
+        .rectangleZ{
+            border: 1px solid #fe2ae7;
+            color: #fe2ae7;
+            animation: ggZ 2s linear 1s infinite alternate;
+        }
+        .rectangleXY{
+            border: 1px solid #ff7c29;
+            color: #ff7c29;
+            animation: ggXZ 2s linear 1s infinite alternate;
+        }
+        .rectangleXZ{
+            border: 1px solid red;
+            color: red;
+            animation: ggXZ 2s linear 1s infinite alternate;
+        }
+        .rectangleYZ{
+            border: 1px solid green;
+            color: green;
+            animation: ggYZ 2s linear 1s infinite alternate;
+        }
+        @keyframes ggX{
+            from {
+                transform: rotate3d(1, 0, 1,0deg);
+            }
+            to{
+                transform: rotate3d(1, 0, 1,360deg);
+            }
+        }
+        @keyframes ggY{
+            from {
+                transform: rotate3d(0, 1, 0,0deg);
+            }
+            to{
+                transform: rotate3d(0, 1, 0,360deg);
+            }
+        }
+        @keyframes ggZ{
+            from {
+                transform: rotate3d(0, 0, 1,0deg);
+            }
+            to{
+                transform: rotate3d(0, 0, 1,360deg);
+            }
+        }
+        @keyframes ggXY{
+            from {
+                transform: rotate3d(1, 1, 0,0deg);
+            }
+            to{
+                transform: rotate3d(1, 1, 0,360deg);
+            }
+        }
+        @keyframes ggXZ{
+            from {
+                transform: rotate3d(1, 0, 1,0deg);
+            }
+            to{
+                transform: rotate3d(1, 0, 1,360deg);
+            }
+        }
+        @keyframes ggYZ{
+            from {
+                transform: rotate3d(0, 1, 1,0deg);
+            }
+            to{
+                transform: rotate3d(0, 1, 1,360deg);
+            }
+        }
+    </style>
 </head>
-<style>
-    .spinner {
-        width: 30px;
-        height: 30px;
-
-        position: relative;
-        margin: 100px auto;
-    }
-
-    .double-bounce1, .double-bounce2 {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-color: #67CF22;
-        opacity: 0.6;
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        -webkit-animation: bounce 2.0s infinite ease-in-out;
-        animation: bounce 2.0s infinite ease-in-out;
-    }
-
-    .double-bounce2 {
-        -webkit-animation-delay: -1.0s;
-        animation-delay: -1.0s;
-    }
-
-    @-webkit-keyframes bounce {
-        0%, 100% { -webkit-transform: scale(0.0) }
-        50% { -webkit-transform: scale(1.0) }
-    }
-
-    @keyframes bounce {
-        0%, 100% {
-            transform: scale(0.0);
-            -webkit-transform: scale(0.0);
-        } 50% {
-              transform: scale(1.0);
-              -webkit-transform: scale(1.0);
-          }
-    }
-    /*.spinner {
-        margin: 100px auto;
-        width: 60px;
-        height: 32px;
-        text-align: center;
-        font-size: 10px;
-    }
-
-    .spinner > div {
-        background-color: #67CF22;
-        height: 100%;
-        width: 6px;
-        display: inline-block;
-
-        -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
-        animation: stretchdelay 1.2s infinite ease-in-out;
-    }
-
-    .spinner .rect2 {
-        -webkit-animation-delay: -1.1s;
-        animation-delay: -1.1s;
-    }
-
-    .spinner .rect3 {
-        -webkit-animation-delay: -1.0s;
-        animation-delay: -1.0s;
-    }
-
-    .spinner .rect4 {
-        -webkit-animation-delay: -0.9s;
-        animation-delay: -0.9s;
-    }
-
-    .spinner .rect5 {
-        -webkit-animation-delay: -0.8s;
-        animation-delay: -0.8s;
-    }
-
-    @-webkit-keyframes stretchdelay {
-        0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
-        20% { -webkit-transform: scaleY(1.0) }
-    }
-
-    @keyframes stretchdelay {
-        0%, 40%, 100% {
-            transform: scaleY(0.4);
-            -webkit-transform: scaleY(0.4);
-        }  20% {
-               transform: scaleY(1.0);
-               -webkit-transform: scaleY(1.0);
-           }
-    }*/
-</style>
 <body>
-<div class="spinner">
-    <div class="double-bounce1"></div>
-    <div class="double-bounce2"></div>
-</div>
-
-<!--<div class="spinner">
-    <div class="rect1"></div>
-    <div class="rect2"></div>
-    <div class="rect3"></div>
-    <div class="rect4"></div>
-    <div class="rect5"></div>
-</div>-->
+<div class="item rectangleX">X</div>
+<div class="item rectangleY">Y</div>
+<div class="item rectangleZ">Z</div>
+<div class="item rectangleXZ">XY</div>
+<div class="item rectangleYZ">YZ</div>
+<div class="item rectangleYZ">YZ</div>
 </body>
 </html>
